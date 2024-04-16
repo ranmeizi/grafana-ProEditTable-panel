@@ -1,0 +1,172 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "datasource": {
+        "type": "yesoreyeram-infinity-datasource",
+        "uid": "d2efb99d-9c8c-41ce-bc4e-bc316a44ef6d"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 14,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 1,
+      "links": [
+        {
+          "title": "hi",
+          "url": "http://www.baidu.com"
+        }
+      ],
+      "options": {
+        "hideFrom": {
+          "legend": false,
+          "tooltip": false,
+          "viz": false
+        },
+        "http_add_parts": [
+          {
+            "key": "Authorization",
+            "type": 0,
+            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTMzNjQzNDB9.JNbLshaEqIQHTSyLM5P2y8j4oZ-WZ8qEcE2ICo3ilz7He4MkrHAeKiK_cITpHErjGOT1DO7PgyiBC3j-8ShDJamMnRxqj1K6ZZ0yTNRi0FeULy5jE38IUcCxepJEwW7SKO_FP3XExPnC8lZm4UPgt_zQG2hdVsuk5wdP7JEVeRN9OPVy3SWe6bZ0LZNp0hQmlhE7_82CD9FDJJj_vgocL3pGWXqpHhY_I1rPYAtYMQDNfXWIY6qP_mrE6fGrrhHkTyD58thOM4Epn2fJ2NkF602RiQamSxzVLuHe1I-0s8012GBzHWUiSYKlGNucQZBvH_yhuV-v_5ZmypBH4B6-Ng"
+          }
+        ],
+        "row_key": "id",
+        "seriesCountSize": "sm",
+        "showSeriesCount": true,
+        "table_name": "sys_user",
+        "text": "???n",
+        "url_columns": "http://192.168.190.24:3001/system/user/columns",
+        "url_create": "http://192.168.190.24:3001/system/user/create",
+        "url_delete": "http://192.168.190.24:3001/system/user/deleteById",
+        "url_list": "http://192.168.190.24:3001/system/user/list",
+        "url_update": "http://192.168.190.24:3001/system/user/update",
+        "use_data_query": true,
+        "var_page": "page",
+        "var_size": "size"
+      },
+      "targets": [
+        {
+          "columns": [],
+          "datasource": {
+            "type": "yesoreyeram-infinity-datasource",
+            "uid": "d2efb99d-9c8c-41ce-bc4e-bc316a44ef6d"
+          },
+          "filters": [],
+          "format": "trace",
+          "global_query_id": "",
+          "hide": false,
+          "json_options": {
+            "root_is_not_array": true
+          },
+          "refId": "query",
+          "root_selector": "data.record",
+          "source": "url",
+          "type": "json",
+          "url": " http://192.168.190.24:3001/system/user/list",
+          "url_options": {
+            "data": "",
+            "headers": [
+              {
+                "key": "Authorization",
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTMzNjQzNDB9.JNbLshaEqIQHTSyLM5P2y8j4oZ-WZ8qEcE2ICo3ilz7He4MkrHAeKiK_cITpHErjGOT1DO7PgyiBC3j-8ShDJamMnRxqj1K6ZZ0yTNRi0FeULy5jE38IUcCxepJEwW7SKO_FP3XExPnC8lZm4UPgt_zQG2hdVsuk5wdP7JEVeRN9OPVy3SWe6bZ0LZNp0hQmlhE7_82CD9FDJJj_vgocL3pGWXqpHhY_I1rPYAtYMQDNfXWIY6qP_mrE6fGrrhHkTyD58thOM4Epn2fJ2NkF602RiQamSxzVLuHe1I-0s8012GBzHWUiSYKlGNucQZBvH_yhuV-v_5ZmypBH4B6-Ng"
+              }
+            ],
+            "method": "GET",
+            "params": [
+              {
+                "key": "page_num",
+                "value": "$page"
+              },
+              {
+                "key": "page_size",
+                "value": "$size"
+              }
+            ]
+          }
+        }
+      ],
+      "title": "Panel Title",
+      "type": "koudai-grafanareact-panel"
+    }
+  ],
+  "refresh": "",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "selected": true,
+          "text": "1",
+          "value": "1"
+        },
+        "hide": 0,
+        "name": "page",
+        "options": [
+          {
+            "selected": true,
+            "text": "1",
+            "value": "1"
+          }
+        ],
+        "query": "1",
+        "skipUrlSync": false,
+        "type": "textbox"
+      },
+      {
+        "current": {
+          "selected": false,
+          "text": "20",
+          "value": "20"
+        },
+        "hide": 0,
+        "label": "size",
+        "name": "size",
+        "options": [
+          {
+            "selected": true,
+            "text": "20",
+            "value": "20"
+          }
+        ],
+        "query": "20",
+        "skipUrlSync": false,
+        "type": "textbox"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-6h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Provisioned grafana-react-panel dashboard",
+  "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
+  "version": 1,
+  "weekStart": ""
+}
