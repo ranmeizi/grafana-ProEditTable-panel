@@ -99,10 +99,6 @@
               {
                 "key": "page_num",
                 "value": "$page"
-              },
-              {
-                "key": "page_size",
-                "value": "$size"
               }
             ]
           }
@@ -120,20 +116,20 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "1",
-          "value": "1"
+          "selected": false,
+          "text": "4",
+          "value": "4"
         },
         "hide": 0,
         "name": "page",
         "options": [
           {
-            "selected": true,
+            "selected": false,
             "text": "1",
             "value": "1"
           }
         ],
-        "query": "1",
+        "query": "4",
         "skipUrlSync": false,
         "type": "textbox"
       },
@@ -167,6 +163,6 @@
   "timezone": "",
   "title": "Provisioned grafana-react-panel dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 1,
+  "version": 2,
   "weekStart": ""
 }

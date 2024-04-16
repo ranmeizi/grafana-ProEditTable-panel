@@ -135,6 +135,7 @@ export const ProTablePanel: React.FC<Props> = (props) => {
 
         if (res.data.code === 200) {
             message.success(res.data.msg)
+            refresh()
         } else {
             message.error(res.data.msg)
         }
@@ -148,6 +149,7 @@ export const ProTablePanel: React.FC<Props> = (props) => {
             render: (text: any, record: any, _: any, action: any) => [
                 <Button
                     type='link'
+                    size='small'
                     key="editable"
                     disabled={!options.url_update}
                     onClick={() => {
@@ -158,6 +160,7 @@ export const ProTablePanel: React.FC<Props> = (props) => {
                 </Button>,
                 <Button
                     type='link'
+                    size='small'
                     key="delete"
                     disabled={!options.url_delete}
                     onClick={() => {
