@@ -50,7 +50,7 @@
           {
             "key": "Authorization",
             "type": 0,
-            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTMzNjQzNDB9.JNbLshaEqIQHTSyLM5P2y8j4oZ-WZ8qEcE2ICo3ilz7He4MkrHAeKiK_cITpHErjGOT1DO7PgyiBC3j-8ShDJamMnRxqj1K6ZZ0yTNRi0FeULy5jE38IUcCxepJEwW7SKO_FP3XExPnC8lZm4UPgt_zQG2hdVsuk5wdP7JEVeRN9OPVy3SWe6bZ0LZNp0hQmlhE7_82CD9FDJJj_vgocL3pGWXqpHhY_I1rPYAtYMQDNfXWIY6qP_mrE6fGrrhHkTyD58thOM4Epn2fJ2NkF602RiQamSxzVLuHe1I-0s8012GBzHWUiSYKlGNucQZBvH_yhuV-v_5ZmypBH4B6-Ng"
+            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTM5NzQ1Mjh9.hVFs_MAANU_WhRIqxBo-DsmoA70MQIdVcMBS_gHdL6dPefkuoLOrK6oP6ectxJsPsz0063jNdsKDFN_vpsS1IsQBzkTx6wwZXeAUJc8ATVZjO_wldo5WRoNHvlzRxM9N3R3NPYhXjyY2cMnds5msM1-MxRCA6f_jGk3yV2M7pK9voctDwU9v7OZXh8SNfwKJOReBACp17wzflIMsy_HVrn9Ril10ndHPljZbFa29WS95BQCH-2LtSMIXlFlCtRNdIpdbQPmZMty-BSY4KetEO55nIIq0xmcBpEU_wvL0NuD_dl6z0zbtaQFIRJ5PcdpuKAPveGaDxq0YS3tUQaotgA"
           }
         ],
         "row_key": "id",
@@ -91,7 +91,7 @@
             "headers": [
               {
                 "key": "Authorization",
-                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTMzNjQzNDB9.JNbLshaEqIQHTSyLM5P2y8j4oZ-WZ8qEcE2ICo3ilz7He4MkrHAeKiK_cITpHErjGOT1DO7PgyiBC3j-8ShDJamMnRxqj1K6ZZ0yTNRi0FeULy5jE38IUcCxepJEwW7SKO_FP3XExPnC8lZm4UPgt_zQG2hdVsuk5wdP7JEVeRN9OPVy3SWe6bZ0LZNp0hQmlhE7_82CD9FDJJj_vgocL3pGWXqpHhY_I1rPYAtYMQDNfXWIY6qP_mrE6fGrrhHkTyD58thOM4Epn2fJ2NkF602RiQamSxzVLuHe1I-0s8012GBzHWUiSYKlGNucQZBvH_yhuV-v_5ZmypBH4B6-Ng"
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTM5NzQ1Mjh9.hVFs_MAANU_WhRIqxBo-DsmoA70MQIdVcMBS_gHdL6dPefkuoLOrK6oP6ectxJsPsz0063jNdsKDFN_vpsS1IsQBzkTx6wwZXeAUJc8ATVZjO_wldo5WRoNHvlzRxM9N3R3NPYhXjyY2cMnds5msM1-MxRCA6f_jGk3yV2M7pK9voctDwU9v7OZXh8SNfwKJOReBACp17wzflIMsy_HVrn9Ril10ndHPljZbFa29WS95BQCH-2LtSMIXlFlCtRNdIpdbQPmZMty-BSY4KetEO55nIIq0xmcBpEU_wvL0NuD_dl6z0zbtaQFIRJ5PcdpuKAPveGaDxq0YS3tUQaotgA"
               }
             ],
             "method": "GET",
@@ -124,7 +124,7 @@
         "name": "page",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "1",
             "value": "1"
           }
@@ -163,6 +163,6 @@
   "timezone": "",
   "title": "Provisioned grafana-react-panel dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }

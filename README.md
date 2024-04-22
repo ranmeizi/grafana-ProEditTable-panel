@@ -8,6 +8,24 @@ koudai-monster pikapika pikachu
 
 a panel plugin based on pro-component/EditableProTable and a crud api standard.
 
+## develop
+
+```yarn dev``` to build and run tbe panel plugin front project
+
+use docker
+
+pull a grafana-enterprise image on docker hub
+
+and run
+
+```yarn server``` to run the grafana application,it will install the panel-plugin in grafana
+
+then you can debug your code
+
+### ui lib
+
+I prefer you to use @grafana/ui to contribute your ui component, but you also can use ant-design ,dont forget to resolve the grafana theme for ant
+
 ## usage
 
 ### PanelSettings
@@ -98,7 +116,7 @@ example json:
 ```json
 {
   "code":200,
-  "message":"OK",
+  "msg":"OK",
   "data":[
     {"id":1},
     {"id":2}
@@ -131,7 +149,7 @@ example json:
 ```json
 {
   "code":200,
-  "message":"OK"
+  "msg":"OK"
 }
 ```
 
@@ -161,7 +179,7 @@ example json:
 ```json
 {
   "code":200,
-  "message":"OK"
+  "msg":"OK"
 }
 ```
 
@@ -196,7 +214,7 @@ example json:
 ```json
 {
   "code":200,
-  "message":"OK"
+  "msg":"OK"
 }
 ```
 
@@ -211,13 +229,31 @@ example json:
 
 ```json
 {
-  "code":200,
-  "message":"OK",
-  "columns":[
-    {"title":"ID","dataIndex":"id"},
-    {"title":"Name","dataIndex":"name","editable":true}
+  "code": 200,
+  "msg": "OK",
+  "data": [
+    { "title": "ID", "dataIndex": "id", "editable": false },
+    { "title": "用户名", "dataIndex": "uname", "editable": true, "valueType": "text" },
+    { "title": "昵称", "dataIndex": "nickname", "editable": true, "valueType": "text" },
+    {
+      "title": "性别",
+      "dataIndex": "sex",
+      "editable": true,
+      "valueType": "select",
+      "fieldProps": {
+        "options": [
+          { "label": "男", "value": "1" },
+          { "label": "女", "value": "2" },
+          { "label": "未知", "value": "3" }
+        ]
+      }
+    },
+    { "title": "手机", "dataIndex": "mobile", "editable": true, "valueType": "text" },
+    { "title": "邮箱", "dataIndex": "email", "editable": true, "valueType": "text" },
+    { "title": "启用", "dataIndex": "enabled", "editable": true, "valueType": "switch" }
   ]
 }
+
 ```
 
 ### Data Query instead of list API
