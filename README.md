@@ -24,7 +24,7 @@ then you can debug your code
 
 ### ui lib
 
-I prefer you to use @grafana/ui to contribute your ui component, but you also can use ant-design ,dont forget to resolve the grafana theme for ant
+I recommended use @grafana/ui to contribute your ui component, but you also can use ant-design ,dont forget to resolve the grafana theme for ant
 
 ## usage
 
