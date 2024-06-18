@@ -76,7 +76,7 @@ const config = async (env): Promise<Configuration> => {
     module: {
       rules: [
         {
-          exclude: /(node_modules)/,
+          // exclude: /(node_modules)/,
           test: /\.[tj]sx?$/,
           use: {
             loader: 'swc-loader',
@@ -102,6 +102,10 @@ const config = async (env): Promise<Configuration> => {
         {
           test: /\.s[ac]ss$/,
           use: ['style-loader', 'css-loader', 'sass-loader'],
+        },
+        {
+          test: /\.less$/,
+          use: ['style-loader', 'css-loader', 'less-loader'],
         },
         {
           test: /\.(png|jpe?g|gif|svg)$/,

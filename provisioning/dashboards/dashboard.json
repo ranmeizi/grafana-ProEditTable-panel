@@ -50,7 +50,7 @@
           {
             "key": "Authorization",
             "type": 0,
-            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTM5NzQ1Mjh9.hVFs_MAANU_WhRIqxBo-DsmoA70MQIdVcMBS_gHdL6dPefkuoLOrK6oP6ectxJsPsz0063jNdsKDFN_vpsS1IsQBzkTx6wwZXeAUJc8ATVZjO_wldo5WRoNHvlzRxM9N3R3NPYhXjyY2cMnds5msM1-MxRCA6f_jGk3yV2M7pK9voctDwU9v7OZXh8SNfwKJOReBACp17wzflIMsy_HVrn9Ril10ndHPljZbFa29WS95BQCH-2LtSMIXlFlCtRNdIpdbQPmZMty-BSY4KetEO55nIIq0xmcBpEU_wvL0NuD_dl6z0zbtaQFIRJ5PcdpuKAPveGaDxq0YS3tUQaotgA"
+            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTg4OTkzNjV9.OyKjKu4I4XW7lac95pn0JN48CWtjxuCPoJxaNnfWu3m19ud6_KalygZIopPY8XmnEAqSpM7BLWlYp_kTEl12368ur8jWkZNKfVDnfSEXcko669-njQ-mTXMf8K-DZrNbbyC_8m_vTNwxc366XE0G8BLoKsueXcIJe3-IVrbrbqNF1N--5-NVvG3hc5wr1YoZUTSr26igYP1JxgoUm-U7lI-0eAf-o7wPD_RNPnXLOGzgn1u6b35OMURZkgr8uHUJ_MuYAMFfRds6s2R3G_o9YBGTAp3pNTiL_uiC4WIt2uOU4pj1Ig6_W9TJIpDLjPgh4IOaZM1FNb8F-kg7pVtD1A"
           }
         ],
         "row_key": "id",
@@ -58,11 +58,11 @@
         "showSeriesCount": true,
         "table_name": "sys_user",
         "text": "???n",
-        "url_columns": "http://192.168.190.24:3001/system/user/columns",
-        "url_create": "http://192.168.190.24:3001/system/user/create",
-        "url_delete": "http://192.168.190.24:3001/system/user/deleteById",
-        "url_list": "http://192.168.190.24:3001/system/user/list",
-        "url_update": "http://192.168.190.24:3001/system/user/update",
+        "url_columns": "http://127.0.0.1:3001/system/user/columns",
+        "url_create": "http://127.0.0.1:3001/system/user/create",
+        "url_delete": "http://127.0.0.1:3001/system/user/deleteById",
+        "url_list": "http://127.0.0.1:3001/system/user/list",
+        "url_update": "http://127.0.0.1:3001/system/user/update",
         "use_data_query": true,
         "var_page": "page",
         "var_size": "size"
@@ -85,13 +85,13 @@
           "root_selector": "data.record",
           "source": "url",
           "type": "json",
-          "url": " http://192.168.190.24:3001/system/user/list",
+          "url": " http://127.0.0.1:3001/system/user/list",
           "url_options": {
             "data": "",
             "headers": [
               {
                 "key": "Authorization",
-                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTM5NzQ1Mjh9.hVFs_MAANU_WhRIqxBo-DsmoA70MQIdVcMBS_gHdL6dPefkuoLOrK6oP6ectxJsPsz0063jNdsKDFN_vpsS1IsQBzkTx6wwZXeAUJc8ATVZjO_wldo5WRoNHvlzRxM9N3R3NPYhXjyY2cMnds5msM1-MxRCA6f_jGk3yV2M7pK9voctDwU9v7OZXh8SNfwKJOReBACp17wzflIMsy_HVrn9Ril10ndHPljZbFa29WS95BQCH-2LtSMIXlFlCtRNdIpdbQPmZMty-BSY4KetEO55nIIq0xmcBpEU_wvL0NuD_dl6z0zbtaQFIRJ5PcdpuKAPveGaDxq0YS3tUQaotgA"
+                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTg4OTkzNjV9.OyKjKu4I4XW7lac95pn0JN48CWtjxuCPoJxaNnfWu3m19ud6_KalygZIopPY8XmnEAqSpM7BLWlYp_kTEl12368ur8jWkZNKfVDnfSEXcko669-njQ-mTXMf8K-DZrNbbyC_8m_vTNwxc366XE0G8BLoKsueXcIJe3-IVrbrbqNF1N--5-NVvG3hc5wr1YoZUTSr26igYP1JxgoUm-U7lI-0eAf-o7wPD_RNPnXLOGzgn1u6b35OMURZkgr8uHUJ_MuYAMFfRds6s2R3G_o9YBGTAp3pNTiL_uiC4WIt2uOU4pj1Ig6_W9TJIpDLjPgh4IOaZM1FNb8F-kg7pVtD1A"
               }
             ],
             "method": "GET",
