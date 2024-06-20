@@ -1,7 +1,5 @@
-import type { RemoteSchemaEditableProTableConfig } from '@bomon/schema-pro-component/src/components/EditableProTable';
-
 export type AppOptions = {
-  table_config?: RemoteSchemaEditableProTableConfig;
+  config?: string;
   http_add_parts: HttpAddParts[];
 } & AliasOptions;
 

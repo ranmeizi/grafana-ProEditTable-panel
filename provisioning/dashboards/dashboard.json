@@ -41,6 +41,7 @@
         }
       ],
       "options": {
+        "config": "{\n    \"editableProTableProps\": {\n        \"rowKey\": \"id\",\n        \"columns\": [\n            {\n                \"title\": \"用户名\",\n                \"dataIndex\": \"uname\",\n                \"editable\": true,\n                \"valueType\": \"text\"\n            },\n            {\n                \"title\": \"昵称\",\n                \"dataIndex\": \"nickname\",\n                \"editable\": true,\n                \"valueType\": \"text\"\n            },\n            {\n                \"title\": \"性别\",\n                \"dataIndex\": \"sex\",\n                \"editable\": true,\n                \"valueType\": \"select\",\n                \"fieldProps\": {\n                    \"options\": [\n                        {\n                            \"label\": \"男\",\n                            \"value\": \"1\"\n                        },\n                        {\n                            \"label\": \"女\",\n                            \"value\": \"2\"\n                        },\n                        {\n                            \"label\": \"未知\",\n                            \"value\": \"3\"\n                        }\n                    ]\n                }\n            },\n            {\n                \"title\": \"手机\",\n                \"dataIndex\": \"mobile\",\n                \"editable\": true,\n                \"valueType\": \"text\"\n            },\n            {\n                \"title\": \"邮箱\",\n                \"dataIndex\": \"email\",\n                \"editable\": true,\n                \"valueType\": \"text\"\n            },\n            {\n                \"title\": \"启用\",\n                \"dataIndex\": \"enabled\",\n                \"editable\": true,\n                \"valueType\": \"switch\"\n            }\n        ]\n    },\n    \"actions\": {\n        \"queryList\": \"http://192.168.66.72:3001/system/user/list\",\n        \"create\": \"http://192.168.66.72:3001/system/user/create\",\n        \"updateById\": \"http://192.168.66.72:3001/system/user/update\",\n        \"deleteById\": \"http://192.168.66.72:3001/system/user/deleteById\"\n    }\n}",
         "hideFrom": {
           "legend": false,
           "tooltip": false,
@@ -53,57 +54,12 @@
             "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTg4OTkzNjV9.OyKjKu4I4XW7lac95pn0JN48CWtjxuCPoJxaNnfWu3m19ud6_KalygZIopPY8XmnEAqSpM7BLWlYp_kTEl12368ur8jWkZNKfVDnfSEXcko669-njQ-mTXMf8K-DZrNbbyC_8m_vTNwxc366XE0G8BLoKsueXcIJe3-IVrbrbqNF1N--5-NVvG3hc5wr1YoZUTSr26igYP1JxgoUm-U7lI-0eAf-o7wPD_RNPnXLOGzgn1u6b35OMURZkgr8uHUJ_MuYAMFfRds6s2R3G_o9YBGTAp3pNTiL_uiC4WIt2uOU4pj1Ig6_W9TJIpDLjPgh4IOaZM1FNb8F-kg7pVtD1A"
           }
         ],
-        "row_key": "id",
         "seriesCountSize": "sm",
         "showSeriesCount": true,
-        "table_name": "sys_user",
         "text": "???n",
-        "url_columns": "http://127.0.0.1:3001/system/user/columns",
-        "url_create": "http://127.0.0.1:3001/system/user/create",
-        "url_delete": "http://127.0.0.1:3001/system/user/deleteById",
-        "url_list": "http://127.0.0.1:3001/system/user/list",
-        "url_update": "http://127.0.0.1:3001/system/user/update",
-        "use_data_query": true,
         "var_page": "page",
         "var_size": "size"
       },
-      "targets": [
-        {
-          "columns": [],
-          "datasource": {
-            "type": "yesoreyeram-infinity-datasource",
-            "uid": "d2efb99d-9c8c-41ce-bc4e-bc316a44ef6d"
-          },
-          "filters": [],
-          "format": "trace",
-          "global_query_id": "",
-          "hide": false,
-          "json_options": {
-            "root_is_not_array": true
-          },
-          "refId": "query",
-          "root_selector": "data.record",
-          "source": "url",
-          "type": "json",
-          "url": " http://127.0.0.1:3001/system/user/list",
-          "url_options": {
-            "data": "",
-            "headers": [
-              {
-                "key": "Authorization",
-                "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTg4OTkzNjV9.OyKjKu4I4XW7lac95pn0JN48CWtjxuCPoJxaNnfWu3m19ud6_KalygZIopPY8XmnEAqSpM7BLWlYp_kTEl12368ur8jWkZNKfVDnfSEXcko669-njQ-mTXMf8K-DZrNbbyC_8m_vTNwxc366XE0G8BLoKsueXcIJe3-IVrbrbqNF1N--5-NVvG3hc5wr1YoZUTSr26igYP1JxgoUm-U7lI-0eAf-o7wPD_RNPnXLOGzgn1u6b35OMURZkgr8uHUJ_MuYAMFfRds6s2R3G_o9YBGTAp3pNTiL_uiC4WIt2uOU4pj1Ig6_W9TJIpDLjPgh4IOaZM1FNb8F-kg7pVtD1A"
-              }
-            ],
-            "method": "GET",
-            "params": [
-              {
-                "key": "page_num",
-                "value": "$page"
-              }
-            ]
-          }
-        }
-      ],
       "title": "Panel Title",
       "type": "koudai-grafanareact-panel"
     }
@@ -163,6 +119,6 @@
   "timezone": "",
   "title": "Provisioned grafana-react-panel dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 3,
+  "version": 13,
   "weekStart": ""
 }

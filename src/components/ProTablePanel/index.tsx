@@ -3,12 +3,12 @@ import { css } from '@emotion/css';
 import { GrafanaTheme2, PanelProps } from '@grafana/data';
 import { getTheme, useStyles2 } from '@grafana/ui';
 import { ConfigProvider, Pagination, theme } from 'antd';
-import FullBlock from 'components/FullBlock';
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useMemo } from 'react';
 import { AppOptions } from 'types';
 import { getParam, updateVariable } from 'utils';
 import useRequest from './useRequest';
 import { useVariables } from 'utils/useVariables';
+import { RemoteSchemaEditableProTableConfig } from '@bomon/schema-pro-component/src/components/EditableProTable';
 
 // 样式
 const getStyles = (theme: GrafanaTheme2) =>
@@ -69,54 +69,23 @@ function ProTablePanel(props: Props) {
 
   let vars = useVariables();
 
-  const pageKey = options.var_page;
-  console.log(vars);
+  const { var_page, config } = options;
+
+  const schemaEditableProTableProps = useMemo<RemoteSchemaEditableProTableConfig>(() => {
+    return JSON.parse(config || '{}');
+  }, [config]);
+
   return (
     <Provider request={request}>
       <ThemeProvider {...props}>
         <div className={rootCls} style={{ height: height + 'px', overflow: 'scroll' }}>
-          <SchemaEditableProTable
-            vars={{
-              page_num: vars.page,
-              page_size: vars.size,
-            }}
-            editableProTableProps={{
-              rowKey: 'id',
-              columns: [
-                { title: 'ID', dataIndex: 'id', editable: false },
-                { title: '用户名', dataIndex: 'uname', editable: true, valueType: 'text' },
-                { title: '昵称', dataIndex: 'nickname', editable: true, valueType: 'text' },
-                {
-                  title: '性别',
-                  dataIndex: 'sex',
-                  editable: true,
-                  valueType: 'select',
-                  fieldProps: {
-                    options: [
-                      { label: '男', value: '1' },
-                      { label: '女', value: '2' },
-                      { label: '未知', value: '3' },
-                    ],
-                  },
-                },
-                { title: '手机', dataIndex: 'mobile', editable: true, valueType: 'text' },
-                { title: '邮箱', dataIndex: 'email', editable: true, valueType: 'text' },
-                { title: '启用', dataIndex: 'enabled', editable: true, valueType: 'switch' },
-              ],
-            }}
-            actions={{
-              queryList: 'http://localhost:3001/system/user/list',
-              create: 'http://localhost:3001/system/user/create',
-              updateById: 'http://localhost:3001/system/user/update',
-              deleteById: 'http://localhost:3001/system/user/deleteById',
-            }}
-          />
+          <SchemaEditableProTable key={config} vars={vars} {...schemaEditableProTableProps} />
           <Pagination
-            current={vars[pageKey]}
+            current={vars[var_page]}
             total={9999}
             simple
             onChange={(page) => {
-              updateVariable(pageKey, page);
+              updateVariable(var_page, page);
             }}
           />
         </div>

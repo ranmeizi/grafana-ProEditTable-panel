@@ -114,7 +114,7 @@ const config = async (env): Promise<Configuration> => {
             // Keep publicPath relative for host.com/grafana/ deployments
             publicPath: `public/plugins/${pluginJson.id}/img/`,
             outputPath: 'img/',
-            filename: Boolean(env.production) ? '[hash][ext]' : '[file]',
+            filename: Boolean(env.production) ? '[name][ext]' : '[file]',
           },
         },
         {
