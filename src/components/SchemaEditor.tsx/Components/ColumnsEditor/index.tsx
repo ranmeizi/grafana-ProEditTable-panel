@@ -52,7 +52,7 @@ export default function ColumnsEditor({ value, onChange }: any) {
     <>
       <Modal title="列配置" isOpen={editIndex !== undefined} onDismiss={onClose} onClickBackdrop={onClose}>
         {editIndex !== undefined ? (
-          <ColumnForm value={value[editIndex]} onChange={editIndex === -1 ? onFormAdd : onFormEdit} />
+          <ColumnForm value={value[editIndex]} onChange={editIndex === -1 ? onFormAdd : onFormEdit} onClose={onClose} />
         ) : null}
       </Modal>
       <DragDropContext onDragEnd={onDragEnd}>
