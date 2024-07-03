@@ -41,7 +41,7 @@
         }
       ],
       "options": {
-        "config": "{\n    \"editableProTableProps\": {\n        \"rowKey\": \"id\",\n        \"columns\": [\n            {\n                \"title\": \"用户名\",\n                \"dataIndex\": \"uname\",\n                \"editable\": true,\n                \"valueType\": \"text\"\n            },\n            {\n                \"title\": \"昵称\",\n                \"dataIndex\": \"nickname\",\n                \"editable\": true,\n                \"valueType\": \"text\"\n            },\n            {\n                \"title\": \"性别\",\n                \"dataIndex\": \"sex\",\n                \"editable\": true,\n                \"valueType\": \"select\",\n                \"fieldProps\": {\n                    \"options\": [\n                        {\n                            \"label\": \"男\",\n                            \"value\": \"1\"\n                        },\n                        {\n                            \"label\": \"女\",\n                            \"value\": \"2\"\n                        },\n                        {\n                            \"label\": \"未知\",\n                            \"value\": \"3\"\n                        }\n                    ]\n                }\n            },\n            {\n                \"title\": \"手机\",\n                \"dataIndex\": \"mobile\",\n                \"editable\": true,\n                \"valueType\": \"text\"\n            },\n            {\n                \"title\": \"邮箱\",\n                \"dataIndex\": \"email\",\n                \"editable\": true,\n                \"valueType\": \"text\"\n            },\n            {\n                \"title\": \"启用\",\n                \"dataIndex\": \"enabled\",\n                \"editable\": true,\n                \"valueType\": \"switch\"\n            }\n        ]\n    },\n    \"actions\": {\n        \"queryList\": \"http://192.168.66.72:3001/system/user/list\",\n        \"create\": \"http://192.168.66.72:3001/system/user/create\",\n        \"updateById\": \"http://192.168.66.72:3001/system/user/update\",\n        \"deleteById\": \"http://192.168.66.72:3001/system/user/deleteById\"\n    }\n}",
+        "config": "{\"editableProTableProps\":{\"rowKey\":\"id\",\"columns\":[{\"title\":\"用户名\",\"dataIndex\":\"uname\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"昵称\",\"dataIndex\":\"nickname\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"性别\",\"dataIndex\":\"sex\",\"editable\":true,\"valueType\":\"select\",\"fieldProps\":{\"options\":[{\"label\":\"男\",\"value\":\"1\"},{\"label\":\"女\",\"value\":\"2\"},{\"label\":\"未知\",\"value\":\"3\"}]}},{\"title\":\"手机\",\"dataIndex\":\"mobile\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"邮箱\",\"dataIndex\":\"email\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"启用\",\"dataIndex\":\"enabled\",\"editable\":true,\"valueType\":\"switch\"}]},\"actions\":{\"queryList\":\"http://192.168.66.67:3001/system/user/list\",\"create\":\"http://192.168.66.67:3001/system/user/create\",\"updateById\":\"http://192.168.66.67:3001/system/user/update\",\"deleteById\":\"http://192.168.66.67:3001/system/user/deleteById\"}}",
         "hideFrom": {
           "legend": false,
           "tooltip": false,
@@ -51,7 +51,7 @@
           {
             "key": "Authorization",
             "type": 0,
-            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTg4OTkzNjV9.OyKjKu4I4XW7lac95pn0JN48CWtjxuCPoJxaNnfWu3m19ud6_KalygZIopPY8XmnEAqSpM7BLWlYp_kTEl12368ur8jWkZNKfVDnfSEXcko669-njQ-mTXMf8K-DZrNbbyC_8m_vTNwxc366XE0G8BLoKsueXcIJe3-IVrbrbqNF1N--5-NVvG3hc5wr1YoZUTSr26igYP1JxgoUm-U7lI-0eAf-o7wPD_RNPnXLOGzgn1u6b35OMURZkgr8uHUJ_MuYAMFfRds6s2R3G_o9YBGTAp3pNTiL_uiC4WIt2uOU4pj1Ig6_W9TJIpDLjPgh4IOaZM1FNb8F-kg7pVtD1A"
+            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTkxNTI0MzF9.Xghy_Gn0n8FNukuaQ1rGNFDa7esHAD14jgtYOTgqTNCGaUhz5TOgFbQ4O_LrFwJnop-XgUyUZNqHHBs1ioJTmlp18ePEXkDbJTAG8amHSv5yL8TflN0Drx1ygzrj2lDGRfjomyBqW_mPud9yNTdkkgwVEiU_CfLpUati1jHfw0IsJsfEKkCntftzKjB8JG34DW7mEh12tK58NFipvtGEVQvt-qLG4xe_Kb0gepHc8g_Xzmy0MusRxYg65agUUXPSwktjh2lVVXKWan9Tyfh-V1HhYIhaU25yYE1UD4ISnEOD6sV8cR2fWul7QrgmcOIx0cfGWYc_o8uqHTvadOKP0g"
           }
         ],
         "seriesCountSize": "sm",
@@ -72,9 +72,9 @@
     "list": [
       {
         "current": {
-          "selected": false,
-          "text": "4",
-          "value": "4"
+          "selected": true,
+          "text": "1",
+          "value": "1"
         },
         "hide": 0,
         "name": "page",
@@ -85,7 +85,7 @@
             "value": "1"
           }
         ],
-        "query": "4",
+        "query": "1",
         "skipUrlSync": false,
         "type": "textbox"
       },
@@ -119,6 +119,6 @@
   "timezone": "",
   "title": "Provisioned grafana-react-panel dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 13,
+  "version": 17,
   "weekStart": ""
 }

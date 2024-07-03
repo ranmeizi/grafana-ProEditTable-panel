@@ -1,5 +1,3 @@
-import { RemoteSchemaEditableProTableConfig } from '@bomon/schema-pro-component/src/components/EditableProTable';
-
 // bafojo
 const preset1 = `{
   "editableProTableProps": {

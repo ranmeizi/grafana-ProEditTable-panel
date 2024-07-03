@@ -1,4 +1,4 @@
-import { AutoSaveField, Field, Input } from '@grafana/ui';
+import { Field, Input } from '@grafana/ui';
 import React from 'react';
 
 // 合并 editableProTableProps 上的属性

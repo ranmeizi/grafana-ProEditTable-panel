@@ -1,8 +1,9 @@
 // 完全替换
 import { ProColumnType } from '@ant-design/pro-components';
-import { Field, Input, Card, ToolbarButton, Collapse, IconButton, Button, HorizontalGroup, Modal } from '@grafana/ui';
+import { Card, Collapse, Button, HorizontalGroup, Modal } from '@grafana/ui';
 import React, { useState } from 'react';
 import { DragDropContext, Droppable, Draggable, DragDropContextProps } from 'react-beautiful-dnd';
+import ColumnForm from './ColumnForm';
 
 export default function ColumnsEditor({ value, onChange }: any) {
   const [collapseKey, setCollapseKey] = useState(value?.[0]?.dataIndex);
@@ -34,19 +35,25 @@ export default function ColumnsEditor({ value, onChange }: any) {
   };
 
   // 新增
-  const onFormAdd = (value) => {};
+  const onFormAdd = (value: any) => {};
 
   // 编辑
-  const onFormEdit = (index, value) => {};
+  const onFormEdit = (index: number, value: any) => {};
+
+  const onDelete = () => {};
 
   const onClose = () => {
     setEditIndex(undefined);
   };
 
+  console.log(onAdd, onFormAdd, onFormEdit, onDelete);
+
   return (
     <>
-      <Modal title="编辑列" isOpen={editIndex !== undefined} onDismiss={onClose} onClickBackdrop={onClose}>
-        <div>hi,列编辑</div>
+      <Modal title="列配置" isOpen={editIndex !== undefined} onDismiss={onClose} onClickBackdrop={onClose}>
+        {editIndex !== undefined ? (
+          <ColumnForm value={value[editIndex]} onChange={editIndex === -1 ? onFormAdd : onFormEdit} />
+        ) : null}
       </Modal>
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="droppable" direction="vertical">

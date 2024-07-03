@@ -36,7 +36,7 @@ const getStyles = (theme: GrafanaTheme2) =>
     },
   });
 
-const ThemeProvider: React.FC<PropsWithChildren<Props>> = (props) => {
+export const ThemeProvider: React.FC<PropsWithChildren> = (props) => {
   const grafana_theme = getTheme();
 
   // url_param
@@ -77,7 +77,7 @@ function ProTablePanel(props: Props) {
 
   return (
     <Provider request={request}>
-      <ThemeProvider {...props}>
+      <ThemeProvider>
         <div className={rootCls} style={{ height: height + 'px', overflow: 'scroll' }}>
           <SchemaEditableProTable key={config} vars={vars} {...schemaEditableProTableProps} />
           <Pagination

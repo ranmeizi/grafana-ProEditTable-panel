@@ -49,16 +49,19 @@ export default function FragmentEditor({ value, onChange }: any) {
       <Select
         options={[
           {
-            label: '[表格属性] editableProTableProps',
+            label: '[表格属性]',
             value: 'editableProTableProps',
+            description: 'editableProTableProps',
           },
           {
-            label: '[列属性] editableProTableProps.columns',
+            label: '[列属性]',
             value: 'editableProTableProps.columns',
+            description: ' editableProTableProps.columns',
           },
           {
-            label: '[请求地址] actions',
+            label: '[请求地址]',
             value: 'actions',
+            description: 'actions',
           },
         ]}
         value={key}
