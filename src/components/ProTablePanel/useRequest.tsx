@@ -37,20 +37,14 @@ export default function useRequest({ http_add_parts }: AppOptions): Request {
   return useCallback((url, method, params) => {
     if (method === 'GET') {
       return axios.get(url, { params: { ...cfg.params, ...params }, headers: cfg.headers }).then((res) => {
-        if (res.data.data?.record) {
-          return {
-            ...res.data.data,
-            data: res.data.data.record,
-          };
-        }
-        return res.data.data;
+        return res.data.result;
       });
     }
 
     if (method === 'POST') {
       return axios
         .post(url, { ...cfg.datas, ...params }, { params: { ...cfg.params, ...params }, headers: cfg.headers })
-        .then((res) => res.data.data);
+        .then((res) => res.data.result);
     }
 
     return Promise.reject();
