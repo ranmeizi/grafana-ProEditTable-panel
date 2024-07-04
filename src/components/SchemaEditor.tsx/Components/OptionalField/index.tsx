@@ -1,5 +1,5 @@
-import { Field, FieldProps, Tooltip, InlineSwitch } from '@grafana/ui';
-import React, { PropsWithChildren, useMemo } from 'react';
+import { FieldProps, InlineSwitch, Label } from '@grafana/ui';
+import React, { PropsWithChildren } from 'react';
 import useConstant from 'utils/useConstant';
 
 type Props = FieldProps & {
@@ -42,7 +42,8 @@ export default function OptionalField({
           onChange={(e: any) => onEnabeledChange(e.target.checked)}
         />
       </div>
-      <Field {...fieldProps}>{enabled ? children : <div>未启用,这是一个可选属性</div>}</Field>
+      <Label description={fieldProps.description}>{fieldProps.label}</Label>
+      {enabled ? children : <div>未启用,这是一个可选属性</div>}
     </div>
   );
 }

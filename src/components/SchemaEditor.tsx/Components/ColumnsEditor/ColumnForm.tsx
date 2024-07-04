@@ -1,24 +1,30 @@
 /* eslint-disable no-duplicate-imports */
-import { EditableProTable, ProColumnType, ProConfigProvider } from '@ant-design/pro-components';
+import { EditableProTable, ProColumnType } from '@ant-design/pro-components';
 import {
   Switch,
-  Field,
   Input,
   PanelContainer,
   Select,
   useStyles2,
   SelectCommonProps,
   HorizontalGroup,
+  Label,
 } from '@grafana/ui';
 import React, { useRef, useState } from 'react';
 import OptionalField from '../OptionalField';
 import useConstant from 'utils/useConstant';
 import { GrafanaTheme2 } from '@grafana/data';
 import { css } from '@emotion/css';
-import { ProTable, BetaSchemaForm } from '@ant-design/pro-components';
+import { BetaSchemaForm } from '@ant-design/pro-components';
 import { ThemeProvider } from 'components/ProTablePanel';
 import { Button, ConfigProvider, Divider } from 'antd';
 import { OptionsEditor } from '../OptionsEditor';
+import { field as FieldPresets } from '../../Presets/fields';
+
+const preset_map = {
+  text: FieldPresets.PRESET_TEXT_FIELD,
+  select: FieldPresets.PRESET_SELECT_FIELD,
+};
 
 // 样式c
 const getStyles = (theme: GrafanaTheme2) => css({});
@@ -73,107 +79,111 @@ export default function ColumnForm({
           <div style={{ display: 'flex' }}>
             {/* 预设 */}
             <div style={{ width: '300px', marginRight: '32px' }}>
-              <Field label="预设" description="几种常用的预设字段类型">
-                <Select
-                  options={[
-                    {
-                      label: '不使用预设',
-                      value: 'none',
-                    },
-                    {
-                      label: '下拉选择框',
-                      value: '1',
-                    },
-                  ]}
-                  onChange={(e: any) => {
-                    alert('hei');
-                  }}
-                />
-              </Field>
+              <Label description="几种常用的预设字段类型">预设</Label>
+              <Select
+                options={[
+                  {
+                    label: '不使用预设',
+                    value: 'none',
+                  },
+                  {
+                    label: '文本输入框',
+                    value: 'text',
+                  },
+                  {
+                    label: '下拉选择框',
+                    value: 'select',
+                  },
+                ]}
+                onChange={(e: any) => {
+                  const value = e.value;
+                  if (value === 'none') {
+                    setData({ initialValues });
+                  } else {
+                    setData(preset_map[value] || {});
+                  }
+                }}
+              />
             </div>
             {/* 预览 */}
             <div style={{ width: '100%' }}>
-              <Field label="预览" description="简单预览 表格/表单">
-                <PanelContainer
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-around',
-                    padding: '12px',
-                    background: 'rgba(111,111,111,.1)',
-                  }}
-                >
-                  <EditableProTable
-                    rowKey="id"
-                    style={{ width: '240px' }}
-                    cardProps={{ bodyStyle: { padding: 0 } }}
-                    columns={[
-                      data,
-                      {
-                        title: '操作',
-                        valueType: 'option',
-                        render(_, record, index, action) {
-                          return (
-                            <a
-                              key="editable"
-                              onClick={() => {
-                                action?.startEditable?.(1);
-                              }}
-                            >
-                              编辑
-                            </a>
-                          );
-                        },
+              <Label description="简单预览 表格/表单">预览</Label>
+              <PanelContainer
+                style={{
+                  display: 'flex',
+                  justifyContent: 'space-around',
+                  padding: '12px',
+                  background: 'rgba(111,111,111,.1)',
+                }}
+              >
+                <EditableProTable
+                  rowKey="id"
+                  style={{ width: '240px' }}
+                  cardProps={{ bodyStyle: { padding: 0 } }}
+                  columns={[
+                    data,
+                    {
+                      title: '操作',
+                      valueType: 'option',
+                      render(_, record, index, action) {
+                        return (
+                          <a
+                            key="editable"
+                            onClick={() => {
+                              action?.startEditable?.(1);
+                            }}
+                          >
+                            编辑
+                          </a>
+                        );
                       },
-                    ]}
-                    size="small"
-                    search={false}
-                    options={false}
-                    value={[{ [String(data.dataIndex)]: previewValue, id: 1 }]}
-                    pagination={false}
-                    recordCreatorProps={false}
-                    editable={{ actionRender: (row, config, defaultDom) => [defaultDom.cancel] }}
-                  />
-                  <BetaSchemaForm
-                    autoFocusFirstInput={false}
-                    key={JSON.stringify(data)}
-                    columns={[data]}
-                    initialValues={{ [data.dataIndex]: previewValue }}
-                    onValuesChange={(values) => setPreviewValue(values[data.dataIndex])}
-                    submitter={false}
-                  />
-                </PanelContainer>
-              </Field>
+                    },
+                  ]}
+                  size="small"
+                  search={false}
+                  options={false}
+                  value={[{ [String(data.dataIndex)]: previewValue, id: 1 }]}
+                  pagination={false}
+                  recordCreatorProps={false}
+                  editable={{ actionRender: (row, config, defaultDom) => [defaultDom.cancel] }}
+                />
+                <BetaSchemaForm
+                  autoFocusFirstInput={false}
+                  key={JSON.stringify(data)}
+                  columns={[data]}
+                  initialValues={{ [data.dataIndex]: previewValue }}
+                  onValuesChange={(values) => setPreviewValue(values[data.dataIndex])}
+                  submitter={false}
+                />
+              </PanelContainer>
             </div>
           </div>
           <Divider type="horizontal" />
           {/* 表单 */}
           <div style={{ overflowY: 'auto', maxHeight: '700px' }}>
-            <Field label="字段名" description="dataIndex">
-              <Input
-                value={data.dataIndex as string}
-                onChange={(e: any) => {
-                  onFieldChange('dataIndex', e.target.value);
-                }}
-              />
-            </Field>
+            <Label description="dataIndex">字段名</Label>
+            <Input
+              value={data.dataIndex as string}
+              onChange={(e: any) => {
+                onFieldChange('dataIndex', e.target.value);
+              }}
+            />
 
-            <Field label="展示名" description="title">
-              <Input
-                value={data.title as string}
-                onChange={(e: any) => {
-                  onFieldChange('title', e.target.value);
-                }}
-              />
-            </Field>
+            <Label description="title">展示名</Label>
+            <Input
+              value={data.title as string}
+              onChange={(e: any) => {
+                onFieldChange('title', e.target.value);
+              }}
+            />
 
-            <Field label="可编辑" description="可编辑editable">
-              <Switch
-                value={data.editable}
-                onChange={(e: any) => {
-                  onFieldChange('editable', e.target.checked);
-                }}
-              />
-            </Field>
+            <Label description="editable">可编辑</Label>
+            <Switch
+              value={data.editable}
+              onChange={(e: any) => {
+                onFieldChange('editable', e.target.checked);
+              }}
+            />
 
             <OptionalField
               label="字段类型"
@@ -192,7 +202,8 @@ export default function ColumnForm({
             </OptionalField>
 
             {data.valueType === 'select' ? (
-              <Field label="枚举值">
+              <>
+                <Label>枚举值</Label>
                 <div style={{ width: '400px' }}>
                   <OptionsEditor
                     value={data?.fieldProps?.options || []}
@@ -204,14 +215,37 @@ export default function ColumnForm({
                     }}
                   />
                 </div>
-              </Field>
+              </>
             ) : null}
+
+            <OptionalField
+              label="字段校验"
+              initialValue={initialValues.formItemProps?.rules}
+              description="规则校验"
+              onChange={(v) =>
+                onFieldChange('formItemProps', {
+                  ...(data.formItemProps || {}),
+                  rules: v,
+                })
+              }
+              enabled={data.formItemProps?.rules !== undefined}
+            >
+              <div>过于复杂，只提供预设，如需自定义请直接编辑json</div>
+            </OptionalField>
           </div>
           <Divider type="horizontal" />
           {/* 提交按钮 */}
           <HorizontalGroup justify="flex-end">
             <Button onClick={onClose}>取消</Button>
-            <Button type="primary">保存</Button>
+            <Button
+              type="primary"
+              onClick={() => {
+                onChange(data);
+                onClose();
+              }}
+            >
+              保存
+            </Button>
           </HorizontalGroup>
         </ConfigProvider>
       </ThemeProvider>

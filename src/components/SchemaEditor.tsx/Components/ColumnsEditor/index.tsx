@@ -35,24 +35,35 @@ export default function ColumnsEditor({ value, onChange }: any) {
   };
 
   // 新增
-  const onFormAdd = (value: any) => {};
+  const onFormAdd = (row: any) => {
+    // 追加到最后一个
+    onChange([...value, row]);
+  };
 
   // 编辑
-  const onFormEdit = (index: number, value: any) => {};
+  const onFormEdit = (index: number, row: any) => {
+    value.splice(index, 1, row);
+    onChange([...value]);
+  };
 
-  const onDelete = () => {};
+  const onDelete = (index: number) => {
+    value.splice(index, 1);
+    onChange([...value]);
+  };
 
   const onClose = () => {
     setEditIndex(undefined);
   };
 
-  console.log(onAdd, onFormAdd, onFormEdit, onDelete);
-
   return (
     <>
       <Modal title="列配置" isOpen={editIndex !== undefined} onDismiss={onClose} onClickBackdrop={onClose}>
         {editIndex !== undefined ? (
-          <ColumnForm value={value[editIndex]} onChange={editIndex === -1 ? onFormAdd : onFormEdit} onClose={onClose} />
+          <ColumnForm
+            value={value[editIndex] || {}}
+            onChange={editIndex === -1 ? onFormAdd : onFormEdit}
+            onClose={onClose}
+          />
         ) : null}
       </Modal>
       <DragDropContext onDragEnd={onDragEnd}>
@@ -70,12 +81,16 @@ export default function ColumnsEditor({ value, onChange }: any) {
                           onOpen={() => setCollapseKey(item.dataIndex)}
                           dragHandleProps={provided.dragHandleProps}
                           onEdit={() => onEdit(index)}
+                          onDel={() => onDelete(index)}
                         />
                       </div>
                     );
                   }}
                 </Draggable>
               ))}
+              <Button variant="secondary" style={{ width: '100%', justifyContent: 'center' }} onClick={onAdd}>
+                新增列
+              </Button>
             </div>
           )}
         </Droppable>
@@ -90,9 +105,10 @@ type ColumnItemProps = {
   onOpen: () => void;
   dragHandleProps: any;
   onEdit: () => void;
+  onDel: () => void;
 };
 
-function ColumnItem({ value, open, onOpen, dragHandleProps, onEdit }: ColumnItemProps) {
+function ColumnItem({ value, open, onOpen, dragHandleProps, onEdit, onDel }: ColumnItemProps) {
   const { title, dataIndex } = value;
   return (
     <Card style={{ padding: 0 }} onMouseUp={onOpen}>
@@ -108,7 +124,7 @@ function ColumnItem({ value, open, onOpen, dragHandleProps, onEdit }: ColumnItem
             <div style={{ width: '100%' }}>
               <HorizontalGroup justify="flex-end">
                 <Button icon="edit" variant="secondary" onClick={onEdit}></Button>
-                <Button icon="trash-alt" variant="secondary"></Button>
+                <Button icon="trash-alt" variant="destructive" onClick={onDel}></Button>
               </HorizontalGroup>
             </div>
           </div>

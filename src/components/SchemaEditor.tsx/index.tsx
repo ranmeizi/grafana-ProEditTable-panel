@@ -19,7 +19,7 @@ const getStyles = (theme: GrafanaTheme2) =>
 export default function SchemaEditor({ value, onChange }: any) {
   const rootCls = useStyles2(getStyles);
 
-  const [active, setActive] = useState(1);
+  const [active, setActive] = useState(0);
 
   function onJsonChange(jsonStr: string): boolean {
     try {
