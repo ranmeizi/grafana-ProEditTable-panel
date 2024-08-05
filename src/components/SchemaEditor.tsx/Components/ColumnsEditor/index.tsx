@@ -41,8 +41,8 @@ export default function ColumnsEditor({ value, onChange }: any) {
   };
 
   // 编辑
-  const onFormEdit = (index: number, row: any) => {
-    value.splice(index, 1, row);
+  const onFormEdit = (row: any) => {
+    value.splice(editIndex, 1, row);
     onChange([...value]);
   };
 

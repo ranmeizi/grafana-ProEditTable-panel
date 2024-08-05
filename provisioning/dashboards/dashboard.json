@@ -41,7 +41,7 @@
         }
       ],
       "options": {
-        "config": "{\"editableProTableProps\":{\"rowKey\":\"id\",\"columns\":[{\"title\":\"用户名\",\"dataIndex\":\"uname\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"昵称\",\"dataIndex\":\"nickname\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"性别\",\"dataIndex\":\"sex\",\"editable\":true,\"valueType\":\"select\",\"fieldProps\":{\"options\":[{\"label\":\"男\",\"value\":\"1\"},{\"label\":\"女\",\"value\":\"2\"},{\"label\":\"未知\",\"value\":\"3\"}]}},{\"title\":\"手机\",\"dataIndex\":\"mobile\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"邮箱\",\"dataIndex\":\"email\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"启用\",\"dataIndex\":\"enabled\",\"editable\":true,\"valueType\":\"switch\"}]},\"actions\":{\"queryList\":\"http://192.168.66.67:3001/system/user/list\",\"create\":\"http://192.168.66.67:3001/system/user/create\",\"updateById\":\"http://192.168.66.67:3001/system/user/update\",\"deleteById\":\"http://192.168.66.67:3001/system/user/deleteById\"}}",
+        "config": "{\"editableProTableProps\":{\"rowKey\":\"id\",\"columns\":[{\"title\":\"用户名\",\"dataIndex\":\"uname\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"昵称\",\"dataIndex\":\"nickname\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"性别\",\"dataIndex\":\"sex\",\"editable\":true,\"valueType\":\"select\",\"fieldProps\":{\"options\":[{\"label\":\"男\",\"value\":\"1\"},{\"label\":\"女\",\"value\":\"2\"},{\"label\":\"未知\",\"value\":\"3\"}]}},{\"title\":\"手机\",\"dataIndex\":\"mobile\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"邮箱\",\"dataIndex\":\"email\",\"editable\":true,\"valueType\":\"text\"},{\"title\":\"启用\",\"dataIndex\":\"enabled\",\"editable\":true,\"valueType\":\"switch\"}]},\"actions\":{\"queryList\":\"http://192.168.66.75:3001/system/user/list\",\"create\":\"http://192.168.66.75:3001/system/user/create\",\"updateById\":\"http://192.168.66.75:3001/system/user/update\",\"deleteById\":\"http://192.168.66.75:3001/system/user/deleteById\"}}",
         "hideFrom": {
           "legend": false,
           "tooltip": false,
@@ -51,7 +51,7 @@
           {
             "key": "Authorization",
             "type": 0,
-            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MTkxNTI0MzF9.Xghy_Gn0n8FNukuaQ1rGNFDa7esHAD14jgtYOTgqTNCGaUhz5TOgFbQ4O_LrFwJnop-XgUyUZNqHHBs1ioJTmlp18ePEXkDbJTAG8amHSv5yL8TflN0Drx1ygzrj2lDGRfjomyBqW_mPud9yNTdkkgwVEiU_CfLpUati1jHfw0IsJsfEKkCntftzKjB8JG34DW7mEh12tK58NFipvtGEVQvt-qLG4xe_Kb0gepHc8g_Xzmy0MusRxYg65agUUXPSwktjh2lVVXKWan9Tyfh-V1HhYIhaU25yYE1UD4ISnEOD6sV8cR2fWul7QrgmcOIx0cfGWYc_o8uqHTvadOKP0g"
+            "value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJ1bmFtZSI6Inl1ZWJ1cXVuIiwidWlkIjoxLCJleHAiOjE3MjI0Mzk1OTN9.I3c_tXQmuGUNuE3GUmpCY0gmCt_pi22KbIyKcsilyKFZdluEtlpbC_d9dbWdIN-yoYvN26fxyFr4VaYy7dXTbKiCt72PX1zXqNzEkFyuyDniok36o98KMVXw9wk6TwU_n26nUioG1o0F2r3m1YUyAHdON_4t5mVX1M8dcwjfzX5DfG509c76RdsF3flRVSK6aHqYpXBGczZPRohWn79xGg9MrmnUQxF1l0AD2EnYw4URPruXaa0v-IGsWfGoG5Coob1WxCqwd9RwVBUZ6FeSumx6eRqKSYu3DKqUFbJa3Q-Hgmx8vRxbxYuUd5CmnxteH19k1SD1l76RoulRNUZ0LA"
           }
         ],
         "seriesCountSize": "sm",
@@ -119,6 +119,6 @@
   "timezone": "",
   "title": "Provisioned grafana-react-panel dashboard",
   "uid": "a538aeff-5a8a-42a5-901c-938d896fdd6f",
-  "version": 17,
+  "version": 22,
   "weekStart": ""
 }
