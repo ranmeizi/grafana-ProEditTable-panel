@@ -9,6 +9,7 @@ import { getParam, updateVariable } from 'utils';
 import useRequest from './useRequest';
 import { useVariables } from 'utils/useVariables';
 import { RemoteSchemaEditableProTableConfig } from '@bomon/schema-pro-component/src/components/EditableProTable';
+import useGFRequest from './useGFRequest';
 
 // 样式
 const getStyles = (theme: GrafanaTheme2) =>
@@ -63,13 +64,16 @@ interface Props extends PanelProps<AppOptions> {}
 function ProTablePanel(props: Props) {
   const rootCls = useStyles2(getStyles);
 
-  const { height, options } = props;
+  const { height, options, data } = props;
 
   const request = useRequest(options);
+  // const gfRequest = useGFRequest(data);
 
   let vars = useVariables();
 
-  const { var_page, config } = options;
+  const { var_page, config, crud_gf } = options;
+
+  console.log(props, 'props');
 
   const schemaEditableProTableProps = useMemo<RemoteSchemaEditableProTableConfig>(() => {
     return JSON.parse(config || '{}');

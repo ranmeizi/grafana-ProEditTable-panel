@@ -7,6 +7,13 @@ import { preset1 } from 'presets';
 
 export const plugin = new PanelPlugin<AppOptions>(ProTablePanel).setPanelOptions((builder) => {
   return builder
+    .addBooleanSwitch({
+      category: ['CRUD'],
+      name: 'crud_gf',
+      path: 'crud_gf',
+      description: '使用GF CRUD适配器(虽然适配GF,但默认和推荐还是HTTP)',
+      defaultValue: false,
+    })
     .addCustomEditor({
       category: ['编辑表格配置'],
       id: 'config',

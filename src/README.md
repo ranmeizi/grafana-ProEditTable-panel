@@ -259,3 +259,7 @@ example json:
 ### Data Query instead of list API
 
 ....
+
+### CRUD 适配 gf 
+
+不修改任何 schemacomponent，劫持 sc 中 request 发送请求的 promise ，将 CUD 替换为执行 gf srv 的对应数据源sql，将R返回 panel-plugin 的data值
